@@ -9,6 +9,9 @@ class AttendanceSerializer(serializers.ModelSerializer):
         model = Attendance
         fields = ('employee', 'date', 'present')
 
+    def create(self, validated_data):
+        print(validated_data)
+        return super().create(validated_data)
 
 
 class AttendanceDetailSerializer(serializers.ModelSerializer):
