@@ -17,7 +17,7 @@ class EmployeeManager(BaseUserManager):
 
     def create_superuser(self, email, username, password = None, **extra_fields):
         """
-        Create and save  super user with the given phone_number and password in db.
+        Create and save  super user for hr employee.
         """
         extra_fields.setdefault('is_staff', True)
         extra_fields.setdefault('is_superuser', True)

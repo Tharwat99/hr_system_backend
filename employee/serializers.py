@@ -1,11 +1,11 @@
 from rest_framework import serializers, exceptions
-from .models import Employee
 from django.contrib.auth import authenticate
+from . models import Employee
 from attendance.serializers import AttendanceDetailSerializer
 
 class EmployeeSerializer(serializers.ModelSerializer):
     """
-    employee serializer to serializer account data.
+    employee serializer to serializer employee data.
     """    
     attendances = AttendanceDetailSerializer(many = True)
     class Meta:
@@ -15,7 +15,7 @@ class EmployeeSerializer(serializers.ModelSerializer):
 
 class EmployeeLoginSerializer(serializers.ModelSerializer):
     """
-    employee login serializer.
+    employee login serializer serializer employee data and authenticate it for login.
     """  
     email = serializers.EmailField(required = True)
     password = serializers.CharField(write_only = True)
@@ -24,6 +24,9 @@ class EmployeeLoginSerializer(serializers.ModelSerializer):
         fields = ('email', 'password')
     
     def validate(self, data):
+        """
+        override validate method to login only group = 0 hr_employee. 
+        """
         user = authenticate(**data)
         if user and user.is_active and user.group == 0:
             data['user'] = user

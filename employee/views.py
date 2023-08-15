@@ -14,7 +14,7 @@ from rest_framework.response import Response
 
 class EmployeeLoginView(generics.GenericAPIView):
     """
-    Employee Login View
+    Employee Login View.
     """
     serializer_class = EmployeeLoginSerializer
     authentication_classes = [BasicAuthentication]
@@ -33,11 +33,11 @@ class EmployeeLoginView(generics.GenericAPIView):
             })
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-def logout_view(request):
-    logout(request)
-    return redirect('login')
 
 class EmployeeListCreateView(generics.ListCreateAPIView):
+    """
+    Employee List Create View.
+    """
     queryset = Employee.objects.filter(group = Employee.normal_employee).all()
     serializer_class = EmployeeSerializer
     authentication_classes = [JWTAuthentication]
@@ -45,6 +45,9 @@ class EmployeeListCreateView(generics.ListCreateAPIView):
     
 
 class EmployeeDetailView(generics.RetrieveUpdateDestroyAPIView):
+    """
+    Employee Detail View.
+    """
     queryset = Employee.objects.all()
     serializer_class = EmployeeSerializer
     authentication_classes = [JWTAuthentication]
