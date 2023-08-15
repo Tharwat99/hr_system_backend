@@ -3,20 +3,16 @@ from . models import Attendance
 
 class AttendanceSerializer(serializers.ModelSerializer):
     """
-    employee serializer to serializer account data.
+    Attendance serializer to serializer create attendace for employee.
     """    
     class Meta:
         model = Attendance
         fields = ('employee', 'date', 'present')
 
-    def create(self, validated_data):
-        print(validated_data)
-        return super().create(validated_data)
-
 
 class AttendanceDetailSerializer(serializers.ModelSerializer):
     """
-    employee serializer to serializer account data.
+    Attendance serializer to serializer detaial attendace data for employee.
     """    
     class Meta:
         model = Attendance
