@@ -8,3 +8,13 @@ class AttendanceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Attendance
         fields = ('employee', 'date', 'present')
+
+
+
+class AttendanceDetailSerializer(serializers.ModelSerializer):
+    """
+    employee serializer to serializer account data.
+    """    
+    class Meta:
+        model = Attendance
+        fields = ('date', 'present')

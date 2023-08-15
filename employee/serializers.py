@@ -1,15 +1,16 @@
 from rest_framework import serializers, exceptions
 from .models import Employee
 from django.contrib.auth import authenticate
-
+from attendance.serializers import AttendanceDetailSerializer
 
 class EmployeeSerializer(serializers.ModelSerializer):
     """
     employee serializer to serializer account data.
     """    
+    attendances = AttendanceDetailSerializer(many = True)
     class Meta:
         model = Employee
-        fields = ('id', 'email', 'username', 'group')
+        fields = ('id', 'email', 'username', 'group', 'attendances')
         read_only_fields = ['id']
 
 class EmployeeLoginSerializer(serializers.ModelSerializer):
