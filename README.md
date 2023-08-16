@@ -1,4 +1,4 @@
-# GoCardless sample application
+# hr system application
 
 ## Setup
 
