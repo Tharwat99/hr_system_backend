@@ -36,9 +36,6 @@ Once `pip` has finished downloading the dependencies:
 ```
 And navigate to `http://127.0.0.1:8000/`.
 
-In order to test the purchase flows, fill in the account details in
-`project/gc_app/views.py` to match your **SANDBOX** developer credentials.
-
 ## Tests
 
 To run the tests, `cd` into the directory where `manage.py` is:
