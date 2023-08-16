@@ -7,7 +7,7 @@ class EmployeeSerializer(serializers.ModelSerializer):
     """
     employee serializer to serializer employee data.
     """    
-    attendances = AttendanceDetailSerializer(many = True)
+    attendances = AttendanceDetailSerializer(many = True, read_only= True, required = False)
     class Meta:
         model = Employee
         fields = ('id', 'email', 'username', 'group', 'attendances')
