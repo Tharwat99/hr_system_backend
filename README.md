@@ -32,7 +32,7 @@ Then makemigrations and migrate models to sqlite db:
 
 You should create .env file in hr_system dir and add three variables inside it:
 
-Note: Create a SECRET_KEY value for your app by running the following command at a terminal prompt: python -c 'import secrets; print(secrets.token_hex())'.
+**Note:** Create a SECRET_KEY value for your app by running the following command at a terminal prompt: python -c 'import secrets; print(secrets.token_hex())'.
 
 ```sh
 SECRET_KEY = "<put_your_secret_key_here>"
