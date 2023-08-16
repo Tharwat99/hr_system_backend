@@ -31,7 +31,7 @@ Then makemigrations and migrate models to sqlite db:
 ```
 
 You should create .env file in hr_system dir and add three variables inside it:
-```
+```sh
 SECRET_KEY = ""
 DEBUG = True
 ALLOWED_HOSTS = '*'
