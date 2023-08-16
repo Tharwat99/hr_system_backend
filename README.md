@@ -31,10 +31,11 @@ Then makemigrations and migrate models to sqlite db:
 ```
 
 You should create .env file in hr_system dir and add three variables inside it:
+```
 SECRET_KEY = ""
 DEBUG = True
 ALLOWED_HOSTS = '*'
-
+```
 Once `pip` has finished downloading the dependencies and create .env and add the required variables:
 ```sh
 (env)$ cd project
