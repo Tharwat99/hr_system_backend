@@ -1,5 +1,6 @@
 from django.test import TestCase
 from django.urls import reverse
+from datetime import datetime
 from rest_framework import status
 from rest_framework.test import APIClient
 from rest_framework_simplejwt.tokens import RefreshToken
@@ -27,7 +28,8 @@ class AttendanceListCreateViewTestCase(TestCase):
         url = reverse('list-create-attendance')
         self.client.credentials(HTTP_AUTHORIZATION='Bearer ' + self.token)
         data= {
-            'employee':self.user.id
+            'employee':self.user.id,
+            'date': datetime.now().date()
         }
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
